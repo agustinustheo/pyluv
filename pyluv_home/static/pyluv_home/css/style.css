@@ -1,0 +1,16 @@
+*{
+    margin: 0;
+}
+
+.pyluv-home-header{
+    font-family: 'Playfair Display', serif;
+    user-select: none;
+}
+
+.pyluv-home-container{
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
