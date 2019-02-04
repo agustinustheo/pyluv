@@ -1,0 +1,61 @@
+*{
+    margin: 0;
+}
+
+.pyluv-api-header{
+    font-family: 'Playfair Display', serif;
+    user-select: none;
+    text-align: center;
+}
+
+.pyluv-api-container{
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pyluv-api-textbox{
+    width: 576px;
+    height: 36px;
+    
+    border: 0px;
+    outline: none;
+    
+    font-size: 16pt;
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+    color: rgb(92, 92, 92);
+
+    margin: 15px;
+}
+
+.pyluv-fade-in{
+    opacity: 0;
+}
+
+.pyluv-api-button{
+    width: 174px; 
+    height: 57px; 
+    display: block;
+
+    margin: auto; 
+    margin-top: 10px; 
+    border-style: none;
+    border-radius: 10px;
+    outline: none; 
+    
+    background: linear-gradient(to bottom right, #c560ac, #faa2e4); 
+    color: white; 
+    font-size: 16pt; 
+    
+    text-align: center; 
+    line-height: 57px; 
+    
+    cursor: pointer;
+}
+
+.pyluv-api-button:hover{
+    background: linear-gradient(to bottom right, #a34e8e, #e085ca);
+}

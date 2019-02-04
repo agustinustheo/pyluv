@@ -5,10 +5,13 @@
         <title>Home</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel='stylesheet' href="{% static 'css/style.css' %}">
+        <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+        <link rel='stylesheet' href="{% static 'pyluv_blog/css/style.css' %}">
+        <link rel='stylesheet' href="{% static 'pyluv_home/css/style.css' %}">
     </head>
     <body>
         {% block content %}
         {% endblock %}
     </body>
+    <script src="{% static 'pyluv_home/js/script.js' %}"></script>    
 </html>

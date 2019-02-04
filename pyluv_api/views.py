@@ -5,3 +5,6 @@ from django.http import HttpResponse
 
 def home(request):
   return HttpResponse('<h1>Oh Hello There, Welcome to Pyluv API</h1>')
+
+def sms_id(request):
+  return render(request, 'pyluv_api/indonesian_sms_classify.html')
