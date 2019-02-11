@@ -5,5 +5,6 @@ from django.views.generic import ListView, DetailView
 from pyluv_blog.models import Post
 
 urlpatterns = [
-    path('', views.home, name="pyluv-home"),
+    path('', views.startpage, name="pyluv-startpage"),
+    path('home', views.home, name="pyluv-home"),
 ]

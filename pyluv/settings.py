@@ -31,15 +31,15 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'pyluv_api',
-    'pyluv_blog',
-    'pyluv_home',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'pyluv_api',
+    'pyluv_blog',
+    'pyluv_home',
 ]
 
 MIDDLEWARE = [

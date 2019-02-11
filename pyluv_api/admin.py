@@ -1,3 +1,5 @@
 from django.contrib import admin
+from pyluv_api.models import API, APIUrl
 
-# Register your models here.
+admin.site.register(API)
+admin.site.register(APIUrl)

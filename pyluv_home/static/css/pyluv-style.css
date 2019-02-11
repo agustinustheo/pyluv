@@ -1,0 +1,76 @@
+*{
+    margin: 0;
+}
+
+.pyluv-fade-in{
+    opacity: 0;
+}
+
+.pyluv-navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Playfair Display', serif;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.01);
+    user-select: none;
+}
+
+.pyluv-navbar-logo{
+    display: flex; 
+    align-items: center;
+    font-size: 20pt;
+    padding: 13px;
+    margin-left: 50px;
+    cursor: default;
+}
+
+.pyluv-navbar-button{
+    display: flex;
+    font-size: 14pt;
+    margin-right: 50px;
+}
+.pyluv-navbar-button *{
+    margin: 10px;
+    display: block;
+    color: black;
+    text-decoration: none;
+    width: 75px;
+    height: 100%;
+    cursor: pointer;
+    text-align: center;
+    transition: all .3s ease;
+}
+
+.pyluv-navbar-button *:hover{
+    color: #faa2e4;
+}
+
+.pyluv-button{
+    width: 174px; 
+    height: 57px; 
+    display: block;
+
+    margin: auto; 
+    margin-top: 10px; 
+    border-style: none;
+    border-radius: 10px;
+    outline: none; 
+    
+    background: linear-gradient(to bottom right, #c560ac, #faa2e4); 
+    color: white; 
+    font-size: 16pt; 
+    
+    text-align: center; 
+    line-height: 57px; 
+    
+    cursor: pointer;
+}
+
+.pyluv-button:hover{
+    background: linear-gradient(to bottom right, #a34e8e, #e085ca);
+}
+
+.pyluv-container{
+    width: 50vw; 
+    margin: auto;
+}

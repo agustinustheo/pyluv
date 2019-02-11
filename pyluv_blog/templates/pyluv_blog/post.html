@@ -2,18 +2,15 @@
 
 {% block content %}
 
-  <section class="row">
-    <header class="large-12 columns">
-        <h1>My Pyluv Blog - {{post.title}}</h1>
-        <hr>
-    </header>
-  </section>
-
-    <h6>
-      on {{post.date}}
-    </h6>
-    <p>
-      {{post.body|linebreaks}}
-    </p>
+<div class="pyluv-blog-container">
+  <div class="pyluv-blog-title">{{post.title}}</div>
+  <p class="pyluv-blog-postdate">
+    on {{post.date}}
+  </p>
+  <hr>
+  <div class="pyluv-blog-body">
+    {{post.body|linebreaks}}
+  </div>
+</div>
 
 {% endblock %}
