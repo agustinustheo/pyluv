@@ -39,3 +39,12 @@ tqdm==4.28.1
 ujson==1.35
 urllib3==1.24.1
 wrapt==1.10.11
+beautifulsoup4
+selenium>=2.44.0,<3.0.0
+unidecode
+vcrpy
+future
+fake-useragent
+newspaper3k
+sklearn
+git+https://github.com/abenassi/Google-Search-API

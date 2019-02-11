@@ -1,0 +1,16 @@
+{% extends "pyluv_api/layout.html" %}
+
+{% block content %}
+
+  {% for api in object_list %}
+    <div class="pyluv-api-posts">
+        <a href={{api.base_url}}>
+            {{api.title}}
+            <span>
+              by {{api.author}} 
+            </span>
+        </a>
+      </div>
+  {% endfor %}
+
+{% endblock %}

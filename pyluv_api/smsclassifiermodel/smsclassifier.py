@@ -128,12 +128,9 @@ def classify_text(request):
         
     if normal_msg >= promo_msg and normal_msg >= spam_msg:
         best_result = "normal"
-        confidence = normal_msg / (normal_msg + promo_msg + spam_msg)
     elif promo_msg >= normal_msg and promo_msg >= spam_msg:
         best_result = "promo"
-        confidence = promo_msg / (normal_msg + promo_msg + spam_msg)
     elif spam_msg >= normal_msg and spam_msg >= promo_msg:
         best_result = "spam"
-        confidence = spam_msg / (normal_msg + promo_msg + spam_msg)
 
     return HttpResponse(best_result)

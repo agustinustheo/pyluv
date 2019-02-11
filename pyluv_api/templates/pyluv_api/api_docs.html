@@ -1,0 +1,29 @@
+{% extends "pyluv_api/layout.html" %}
+
+{% block content %}
+
+<div class="pyluv-blog-container">
+  <div class="pyluv-blog-title">{{api.title}}</div>
+  <p class="pyluv-blog-postdate">
+    by {{api.author}}
+  </p>
+  
+  <hr>
+
+  <div class="pyluv-blog-body">
+    {{api.documentation|linebreaks}}
+  </div>
+
+  <hr>
+
+  <div style="font-size: 16pt; margin: 20px;">
+    API Demo :
+    {% for url in api_url %}
+        <a style="display: block; margin: 20px; box-shadow: 2px 4px 10px 2px rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1); padding: 15px; width: 100%; text-decoration: none; color: black; font-size: 14pt;" href={{url.url}}>
+          {{url.api_name}}
+        </a>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock %}

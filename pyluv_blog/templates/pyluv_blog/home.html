@@ -2,11 +2,15 @@
 
 {% block content %}
 
-  <section class="pyluv-fade-in">
-    <header class="large-12 columns">
-        <h1>Pyluv</h1>
-        <hr>
-    </header>
-  </section>
+  {% for text in object_list %}
+    <div class="pyluv-blog-posts">
+        <a href="/blog/post/{{text.id}}">
+            {{text.title}}
+            <span>
+              {{text.date|date:"D, d M Y"}}
+            </span>
+        </a>
+      </div>
+  {% endfor %}
 
 {% endblock %}

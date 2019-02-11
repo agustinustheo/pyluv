@@ -1,0 +1,21 @@
+{% extends "pyluv_api/layout.html" %}
+{% load staticfiles %}
+
+{% block content %}
+
+  <section class="pyluv-api-container pyluv-fade-in">
+    <header class="pyluv-api-header">
+        <div style="font-size: 56pt; text-align: center;">
+          Fake News Detector
+        </div>
+        <div style="font-size: 20pt; text-align: center;">
+          by Pyluv
+        </div>
+        <form>
+          <input class="pyluv-api-textbox" type="text" name="sms_text" placeholder="Enter url or title here..">
+          <input id="fakeNewsClassifyButton" type="submit" value="Classify" class="pyluv-button"></input>
+        </form>
+    </header>
+  </section>
+
+{% endblock %}

@@ -1,42 +1,17 @@
-*{
-    margin: 0;
+.pyluv-navbar-startpage{
+    display: none;
 }
 
 .pyluv-home-header{
     font-family: 'Playfair Display', serif;
     user-select: none;
+    font-size: 64pt; 
+    text-align: center;
 }
 
 .pyluv-home-container{
-    overflow: hidden;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.pyluv-fade-in{
-    opacity: 0;
-}
-
-.pyluv-home-button{
-    width: 174px; 
-    height: 57px; 
-
-    margin: auto; 
-    margin-top: 10px; 
-    border-radius: 10px; 
-    
-    background: linear-gradient(to bottom right, #c560ac, #faa2e4); 
-    color: white; 
-    font-size: 16pt; 
-    
-    text-align: center; 
-    line-height: 57px; 
-    
-    cursor: pointer;
-}
-
-.pyluv-home-button:hover{
-    background: linear-gradient(to bottom right, #a34e8e, #e085ca);
 }
