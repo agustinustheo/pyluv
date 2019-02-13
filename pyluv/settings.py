@@ -25,7 +25,10 @@ SECRET_KEY = 'm)%h%bh$7y@zj2mme-4$qtl%figl((%cjs0eifepacbj0l-ooa'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'http://pyluv.herokuapp.com',
+    'https://pyluv.herokuapp.com',
+]
 
 
 # Application definition
