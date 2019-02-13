@@ -79,10 +79,10 @@ WSGI_APPLICATION = 'pyluv.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'pyluv_dev',
-        'USER': 'postgres',
-        'PASSWORD': '230899',
-        'HOST': '127.0.0.1',
+        'NAME': 'd4653st0rhcci0',
+        'USER': 'mvcrokcqvrzjjm',
+        'PASSWORD': '7f0997f51de60c209b3208afef195850c741136d457f168c511b47a69a9af2bf',
+        'HOST': 'ec2-54-225-237-84.compute-1.amazonaws.com',
         'PORT': '5432'
     }
 }
