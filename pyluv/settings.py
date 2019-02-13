@@ -26,8 +26,9 @@ SECRET_KEY = 'm)%h%bh$7y@zj2mme-4$qtl%figl((%cjs0eifepacbj0l-ooa'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'http://pyluv.herokuapp.com',
-    'https://pyluv.herokuapp.com',
+    'pyluv.herokuapp.com',
+    'localhost',
+    '127.0.0.1',
 ]
 
 
