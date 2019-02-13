@@ -26,8 +26,9 @@ SECRET_KEY = 'removed-secret-key'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'http://pyluv.herokuapp.com',
-    'https://pyluv.herokuapp.com',
+    'pyluv.herokuapp.com',
+    'localhost',
+    '127.0.0.1',
 ]
 
 
