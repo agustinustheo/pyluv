@@ -25,7 +25,10 @@ SECRET_KEY = 'removed-secret-key'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'http://pyluv.herokuapp.com',
+    'https://pyluv.herokuapp.com',
+]
 
 
 # Application definition
