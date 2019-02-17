@@ -59,7 +59,7 @@ def find_similar_articles(news):
     for word in news_title_tokenized:
         search_title = search_title + word + " "
 
-    num_page_searched = 2
+    num_page_searched = 1
     search_results = google.search(search_title, num_page_searched)
 
     similar_articles = []
