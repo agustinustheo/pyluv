@@ -44,7 +44,7 @@ def news_title_tokenization(message):
 
     return tokenized_news_title
 
-def find_similar_articles(news):
+def find_similar_articles(news, similarity):
     news_title_tokenized = ""
     
     if(re.match(r'^https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)$', news)):
@@ -78,21 +78,21 @@ def find_similar_articles(news):
             corpus.append(search_title)
             corpus.append(result_string)
 
-            vectorizer = CountVectorizer()
-            features = vectorizer.fit_transform(corpus).todense()
+        vectorizer = CountVectorizer()
+        features = vectorizer.fit_transform(corpus).todense()
 
-            for f in features:
-                dist = euclidean_distances(features[0], f)
+        for f in features:
+            dist = euclidean_distances(features[0], f)
 
-            if dist < 2.5:
-                similar_article["article_title"] = result.name.split('http')[0].split('...')[0]
-                similar_article["article_url"] = result.link
-                similar_articles.append(similar_article)
+        if dist < similarity:
+            similar_article["article_title"] = result.name.split('http')[0].split('...')[0]
+            similar_article["article_url"] = dist
+            similar_articles.append(similar_article)
 
     return similar_articles
 
 def checkNews(request):
     article = request.GET.get('article')
-    result = find_similar_articles(article)
+    result = find_similar_articles(article, 2.5)
     return HttpResponse(result)
 
