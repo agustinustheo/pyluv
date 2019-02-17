@@ -57,7 +57,7 @@ def find_similar_articles(news, similarity):
 
     print(search_title)
 
-    num_page_searched = 4
+    num_page_searched = 1
     search_results = google.search(search_title, num_page_searched)
 
     similar_articles = []
