@@ -88,7 +88,7 @@ def find_similar_articles(news, similarity):
 
         if dist < similarity:
             similar_article["article_title"] = result.name.split('http')[0].split('...')[0]
-            similar_article["article_url"] = dist
+            similar_article["article_url"] = result.link
             similar_articles.append(similar_article)
 
     return similar_articles
