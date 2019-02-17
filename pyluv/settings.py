@@ -136,4 +136,4 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = ( os.path.join('static'), )
 
 
-API_PICKLE_ROOT = os.path.join(os.path.dirname(BASE_DIR), "pyluv",  "pyluv_api", "smsclassifiermodel" )
+API_PICKLE_ROOT = os.path.join(os.path.dirname(BASE_DIR), "app",  "pyluv_api", "smsclassifiermodel" )
