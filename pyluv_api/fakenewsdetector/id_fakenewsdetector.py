@@ -55,12 +55,16 @@ def find_similar_articles(news, similarity):
     for word in news_title_tokenized:
         search_title = search_title + word + " "
 
-    print(search_title)
-
     num_page_searched = 1
     search_results = google.search(search_title, num_page_searched)
 
     similar_articles = []
+    similar_articless = {}
+    
+    similar_articless["article_title"] = len(search_results)
+    similar_articless["article_url"] = len(search_results)
+    similar_articles.append(similar_articless)
+
     for result in search_results:
         similar_article = {}
         search_result_title = result.name.split('http')[0].split('...')[0]
@@ -76,16 +80,16 @@ def find_similar_articles(news, similarity):
             corpus.append(search_title)
             corpus.append(result_string)
 
-            vectorizer = CountVectorizer()
-            features = vectorizer.fit_transform(corpus).todense()
+        vectorizer = CountVectorizer()
+        features = vectorizer.fit_transform(corpus).todense()
 
-            for f in features:
-                dist = euclidean_distances(features[0], f)
+        for f in features:
+            dist = euclidean_distances(features[0], f)
 
-            if dist < similarity:
-                similar_article["article_title"] = result.name.split('http')[0].split('...')[0]
-                similar_article["article_url"] = result.link
-                similar_articles.append(similar_article)
+        if dist < similarity:
+            similar_article["article_title"] = result.name.split('http')[0].split('...')[0]
+            similar_article["article_url"] = dist
+            similar_articles.append(similar_article)
 
     return similar_articles
 
