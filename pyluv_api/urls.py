@@ -15,4 +15,5 @@ urlpatterns = [
     path('fakenews/en/classify', en_fakenewsdetector.checkNews, name="pyluv-api-sms-id-classify"),
     path('fakenews/id/classify', id_fakenewsdetector.checkNews, name="pyluv-api-sms-id-classify"),
     url(r'^(?P<base_url>\w+)/$', views.api_docs, name='pyluv-api-docs'),
+    url(r'^(?P<base_url>\w+)/$', views.api_test, name='pyluv-api-docs'),
 ]

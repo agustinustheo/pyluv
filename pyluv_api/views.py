@@ -17,3 +17,8 @@ def fakenews_en(request):
 
 def fakenews_id(request):
   return render(request, 'pyluv_api/id_fake_news_detector.html')
+
+def api_test(request, base_url):
+  api_details = get_object_or_404(API, base_url=base_url+'/')
+  api_url = APIUrl.objects.filter(base_api=api_details)
+  return render_to_response('pyluv_api/api_test.html', {'api' : api_details, 'api_url' : api_url})
