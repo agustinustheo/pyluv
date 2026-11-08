@@ -9,7 +9,7 @@ Built using Django
 ## Branches
 
 - **`master`**: modernised (Python 3.12, Django 6, uv, gunicorn).
-- **[`original`](../../tree/original)**: the site as it was in 2019 (Django 2.1, commit `46ac465`).
+- **[`original`](../../tree/original)**: the site as it was in 2019 (Django 2.1, commit `3d4f174`).
 
 ## Run
 
@@ -44,17 +44,26 @@ Production: `gunicorn pyluv.wsgi` (see `Procfile`) with these environment variab
 - `requirements.txt` replaced by `pyproject.toml` + `uv.lock`. `Procfile` uses gunicorn.
 - Django 2.1 → 6: `url()` → `re_path()`, `render_to_response` → `render`, `{% load staticfiles %}` → `{% load static %}`.
   Two migrations got the `pyluv_home` dependency they were missing, so a fresh database can be created.
-- **Secrets removed from code.** The secret key and the Heroku Postgres credentials were hardcoded and are still in git
-  history, so treat them as compromised. Settings now come from environment variables.
+- **Secrets removed.** The secret key and the Heroku Postgres credentials were hardcoded. They are now removed from the
+  whole git history, and settings come from environment variables.
 - SMS classifier: the 2019 pickles don't load with current scikit-learn. It now uses the paper's logistic-regression model
-  from [sms-classifier-model](https://github.com/agustinustheo/sms-classifier-model) (master @ `b0f81ef`) with matching
+  from [sms-classifier-model](https://github.com/agustinustheo/sms-classifier-model) (master @ `753b682`) with matching
   preprocessing. The model loads once per process. scikit-learn is pinned to the version that made the pickle.
 - Fake news: the defunct `google` scraping package was replaced by `googlesearch-python`, and `newspaper3k` by `newspaper4k`.
   Two crashes were fixed: a `NameError` when a search result had an empty title, and a `numpy.matrix` input that current
   scikit-learn rejects.
-- Removed committed `__pycache__` folders.
+- Removed committed `__pycache__` folders and `db.sqlite3` (from the whole history too).
 
 ### Known limitation
 
 Google now blocks search scraping without JavaScript, so the fake-news detectors currently get **no search results**.
 The 2019 code had the same weakness. A real fix needs a search API (for example Brave Search or SerpAPI) and an API key.
+
+## License
+
+[CC BY-SA 4.0](LICENSE). If you use this work, please credit the authors.
+
+## Repository history
+
+The whole history (including `original`) was rewritten in November 2026 to remove secrets, `db.sqlite3` and `__pycache__` folders and to add the licence
+to every commit. Commit hashes before that date no longer exist.
