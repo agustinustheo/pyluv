@@ -3,7 +3,7 @@ from . import views
 from pyluv_api.smsclassifiermodel import smsclassifier
 from pyluv_api.fakenewsdetector import en_fakenewsdetector, id_fakenewsdetector
 from django.views.generic import ListView, DetailView
-from django.conf.urls import url, include
+from django.urls import include, re_path
 from pyluv_api.models import API
 
 urlpatterns = [
@@ -14,6 +14,6 @@ urlpatterns = [
     path('sms/id/classify', smsclassifier.classify_text, name="pyluv-api-sms-id-classify"),
     path('fakenews/en/classify', en_fakenewsdetector.checkNews, name="pyluv-api-sms-id-classify"),
     path('fakenews/id/classify', id_fakenewsdetector.checkNews, name="pyluv-api-sms-id-classify"),
-    url(r'^(?P<base_url>\w+)/$', views.api_docs, name='pyluv-api-docs'),
-    url(r'^(?P<base_url>\w+)/$', views.api_test, name='pyluv-api-docs'),
+    re_path(r'^(?P<base_url>\w+)/$', views.api_docs, name='pyluv-api-docs'),
+    re_path(r'^(?P<base_url>\w+)/$', views.api_test, name='pyluv-api-docs'),
 ]

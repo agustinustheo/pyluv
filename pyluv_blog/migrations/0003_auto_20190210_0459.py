@@ -8,6 +8,7 @@ class Migration(migrations.Migration):
 
     dependencies = [
         ('pyluv_blog', '0002_post_author'),
+        ('pyluv_home', '0001_initial'),
     ]
 
     operations = [

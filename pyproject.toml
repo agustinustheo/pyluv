@@ -1,0 +1,24 @@
+[project]
+name = "pyluv"
+version = "2.0.0"
+description = "Personal site sharing APIs: Indonesian SMS classifier and English/Indonesian fake news identifier"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "beautifulsoup4>=4.12",
+    "dj-database-url>=2.2",
+    "django>=5.2",
+    "googlesearch-python>=1.3",
+    "gunicorn>=23",
+    "newspaper4k>=0.9",
+    "nltk>=3.9",
+    "numpy>=1.26",
+    # The bundled SMS model is a pickle made with exactly this version; change both together.
+    "scikit-learn==1.9.1",
+]
+
+[project.optional-dependencies]
+postgres = ["psycopg[binary]>=3.2"]
+
+[tool.uv]
+package = false

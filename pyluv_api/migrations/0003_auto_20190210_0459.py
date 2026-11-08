@@ -8,6 +8,7 @@ class Migration(migrations.Migration):
 
     dependencies = [
         ('pyluv_api', '0002_api_url'),
+        ('pyluv_home', '0001_initial'),
     ]
 
     operations = [

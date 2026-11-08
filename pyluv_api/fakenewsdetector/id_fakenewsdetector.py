@@ -1,13 +1,16 @@
 import re
 import bs4
 import nltk
-from google import google
-from newspaper import Article
+from googlesearch import search as google_search  # googlesearch-python (the 2019 'google' package is gone)
+from newspaper import Article  # newspaper4k, the maintained fork of newspaper3k
 from bs4 import BeautifulSoup
 from django.http import HttpResponse
 from nltk.tokenize import word_tokenize, sent_tokenize
 from sklearn.metrics.pairwise import euclidean_distances
 from sklearn.feature_extraction.text import CountVectorizer
+
+nltk.download('punkt_tab', quiet=True)
+nltk.download('stopwords', quiet=True)
 
 def preproccess_text(text_messages):
     # change words to lower case - Hello, HELLO, hello are all the same word
@@ -56,7 +59,7 @@ def find_similar_articles(news, similarity):
         search_title = search_title + word + " "
 
     num_page_searched = 1
-    search_results = google.search(search_title, num_page_searched)
+    search_results = list(google_search(search_title, num_results=10 * num_page_searched, advanced=True))
 
     similar_articles = []
     similar_articless = {}
@@ -67,7 +70,7 @@ def find_similar_articles(news, similarity):
 
     for result in search_results:
         similar_article = {}
-        search_result_title = result.name.split('http')[0].split('...')[0]
+        search_result_title = result.title.split('http')[0].split('...')[0]
         search_result_title = remove_unnecessary_noise(search_result_title)
         search_result_title = preproccess_text(search_result_title)
         search_result_title = news_title_tokenization(search_result_title)
@@ -76,19 +79,17 @@ def find_similar_articles(news, similarity):
         for w in search_result_title:
             result_string = result_string + w + " "
 
-            corpus = []
-            corpus.append(search_title)
-            corpus.append(result_string)
+        corpus = [search_title, result_string]
 
         vectorizer = CountVectorizer()
-        features = vectorizer.fit_transform(corpus).todense()
+        features = vectorizer.fit_transform(corpus).toarray()
 
-        for f in features:
-            dist = euclidean_distances(features[0], f)
+        # distance between the query title and this search result's title
+        dist = euclidean_distances(features[0:1], features[1:2])[0][0]
 
         if dist < similarity:
-            similar_article["article_title"] = result.name.split('http')[0].split('...')[0]
-            similar_article["article_url"] = result.link
+            similar_article["article_title"] = result.title.split('http')[0].split('...')[0]
+            similar_article["article_url"] = result.url
             similar_articles.append(similar_article)
 
     return similar_articles
