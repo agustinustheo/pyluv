@@ -9,7 +9,7 @@ Built using Django
 ## Branches
 
 - **`master`**: modernised (Python 3.12, Django 6, uv, gunicorn).
-- **[`original`](../../tree/original)**: the site as it was in 2019 (Django 2.1, commit `3d4f174`).
+- **[`original`](../../tree/original)**: the site as it was in 2019 (Django 2.1, commit `be61a1f`).
 
 ## Run
 
@@ -65,5 +65,6 @@ The 2019 code had the same weakness. A real fix needs a search API (for example 
 
 ## Repository history
 
-The whole history (including `original`) was rewritten in November 2026 to remove secrets, `db.sqlite3` and `__pycache__` folders and to add the licence
+The whole history (including `original`) was rewritten in November 2026 to remove secrets (database settings now come
+from environment variables in every commit), `db.sqlite3` and `__pycache__` folders, and to add the licence
 to every commit. Commit hashes before that date no longer exist.
