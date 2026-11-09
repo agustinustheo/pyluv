@@ -47,7 +47,7 @@ Production: `gunicorn pyluv.wsgi` (see `Procfile`) with these environment variab
 - **Secrets removed.** The secret key and the Heroku Postgres credentials were hardcoded. They are now removed from the
   whole git history, and settings come from environment variables.
 - SMS classifier: the 2019 pickles don't load with current scikit-learn. It now uses the paper's logistic-regression model
-  from [sms-classifier-model](https://github.com/agustinustheo/sms-classifier-model) (master @ `753b682`) with matching
+  from [indonesian-sms-spam-filtering](https://github.com/agustinustheo/indonesian-sms-spam-filtering) (master @ `753b682`) with matching
   preprocessing. The model loads once per process. scikit-learn is pinned to the version that made the pickle.
 - Fake news: the defunct `google` scraping package was replaced by `googlesearch-python`, and `newspaper3k` by `newspaper4k`.
   Two crashes were fixed: a `NameError` when a search result had an empty title, and a `numpy.matrix` input that current
